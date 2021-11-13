@@ -102,3 +102,33 @@
 // prompt('1から10まで足し算した結果は' + num + 'です');
 
 // ３章
+// let alertString = addString("WebCamp");
+
+// alert(alertString);
+
+// function addString(StrA){
+//   let addStr = "Hello" + StrA;
+//   return addStr;
+// }
+
+// let a = prompt('何か入力');
+// alert(a);
+
+//ジャンケンの手を入力　プロンプト欄
+let user_hand = prompt('ぐー、チョキ、パー')
+
+//judge(結果)に、ユーザーの出した手とJavaScriptのランダムの手を比べる関数を入れる
+let judge = 
+
+let js_hand_num = Math.floor(Math.random()*3);
+
+if(js_hand_num == 0){
+  js_hand = 'グー';
+}else if(js_hand_num == 1){
+  js_hand = 'チョキ';
+}else(js_hand_num == 2){
+  js_hand = 'パー';
+}
+
+return js_hand
+alert(js_hand)
