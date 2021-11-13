@@ -106,29 +106,67 @@
 
 // alert(alertString);
 
-function addString(StrA){
-  let addStr = "Hello" + StrA;
-  return addStr;
-}
+// function addString(StrA){
+//   let addStr = "Hello" + StrA;
+//   return addStr;
+// }
 
-let a = prompt('何か入力');
-alert(a);
+// let a = prompt('何か入力');
+// alert(a);
 
 //ジャンケンの手を入力　プロンプト欄
-let user_hand = prompt('ぐー、チョキ、パー')
+let user_hand = prompt('グー、チョキ、パー')
+let js_hand = getJShand();
 
 //judge(結果)に、ユーザーの出した手とJavaScriptのランダムの手を比べる関数を入れる
-let judge = 
+let judge = wl(user_hand,js_hand)
+//結果
+alert('あなたの選んだ手は' + user_hand + 'です。\nJavaScriptの選んだ手は' + js_hand + 'です。\n結果は' + judge + 'です。');
 
-let js_hand_num = Math.floor(Math.random()*3);
 
-if(js_hand_num == 0){
-  js_hand = 'グー';
-}else if(js_hand_num == 1){
-  js_hand = 'チョキ';
-}else(js_hand_num == 2){
-  js_hand = 'パー';
+function getJShand(){
+  let js_hand_num = Math.floor(Math.random()*3);
+  let hand_name;
+
+  if(js_hand_num == 0){
+    hand_name = 'グー';
+  } else if(js_hand_num == 1){
+    hand_name = 'チョキ';
+  } else if(js_hand_num == 2){
+    hand_name = 'パー';
+  }
+  return hand_name;
 }
 
-return js_hand
-alert(js_hand)
+// user_handとjs_handを比べる関数
+function wl(user,js){
+  let wlStr;
+
+  if(user == 'グー'){
+    if(js == 'グー'){
+      wlStr = 'あいこ';
+    } else if(js == 'チョキ'){
+      wlStr = '勝ち';
+    } else if(js == 'パー'){
+      wlStr = '負け';
+    }
+  } else if(user == 'チョキ'){
+    if(js == 'グー'){
+      wlStr = '負け';
+    } else if(js == 'チョキ'){
+      wlStr = 'あいこ';
+    } else if(js == 'パー'){
+      wlStr = '勝ち';
+    }
+  } else if(js == 'パー'){
+    if(js == 'グー'){
+      wlStr = '勝ち';
+    } else if(js == 'チョキ'){
+      wlStr = '負け';
+    } else if(js == 'パー'){
+      wlStr = 'あいこ';
+    }
+  }
+
+  return wlStr;
+}
