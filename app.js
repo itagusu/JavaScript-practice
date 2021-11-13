@@ -106,13 +106,13 @@
 
 // alert(alertString);
 
-// function addString(StrA){
-//   let addStr = "Hello" + StrA;
-//   return addStr;
-// }
+function addString(StrA){
+  let addStr = "Hello" + StrA;
+  return addStr;
+}
 
-// let a = prompt('何か入力');
-// alert(a);
+let a = prompt('何か入力');
+alert(a);
 
 //ジャンケンの手を入力　プロンプト欄
 let user_hand = prompt('ぐー、チョキ、パー')
